@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace PracticaBlog.Controllers
 {
-    //[Authorize]
+    [Authorize]
     [ApiController]
     [Route("[controller]")]
     public class UserController : ControllerBase

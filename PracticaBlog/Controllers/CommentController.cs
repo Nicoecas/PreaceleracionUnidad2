@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PracticaBlog.Controllers
 {
-    //[Authorize]
+    [Authorize]
     [ApiController]
     [Route("[controller]")]
     public class CommentController : ControllerBase
