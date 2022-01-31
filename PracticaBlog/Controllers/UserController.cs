@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace PracticaBlog.Controllers
 {
-    [Authorize]
+    //[Authorize]
     [ApiController]
     [Route("[controller]")]
     public class UserController : ControllerBase
@@ -36,22 +36,22 @@ namespace PracticaBlog.Controllers
             return entity;
         }
 
-        [HttpPut]
-        public async Task<ActionResult<User>> Put(User user)
+        [HttpPost]
+        public async Task<ActionResult<User>> Post(User user)
         {
             await userService.AddUser(user);
             return user;
         }
 
-        [HttpPost]
-        public async Task<ActionResult<User>> Post(User user)
+        [HttpPut]
+        public async Task<ActionResult<User>> Put(User user)
         {
             var entity = await userService.GetById(user.Id);
             if (entity == null)
             {
                 return NotFound();
             }
-            await userService.PostUser(user);
+            await userService.PutUser(user);
             return entity;
         }
 

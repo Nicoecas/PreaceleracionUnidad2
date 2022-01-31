@@ -10,10 +10,10 @@ namespace PracticaBlog.Data.Interfaces
         Task<List<T>> GetAll();
         Task<T> GetById(int id);
         Task<User> AddUser(User user);
-        Task<User> PostUser(User user);
+        Task<User> PutUser(User user);
         Task<Comment> AddComment(Comment comment);
-        Task<Comment> PostComment(Comment comment);
+        Task<Comment> PutComment(Comment comment);
         Task<Post> AddPost(Post post);
-        Task<Post> PostPost(Post post);
+        Task<Post> PutPost(Post post);
     }
 }

@@ -46,7 +46,7 @@ namespace PracticaBlog.Data
             return comment;
         }
 
-        public async Task<Comment> PostComment(Comment comment)
+        public async Task<Comment> PutComment(Comment comment)
         {
             var internalvariable = await _blogContext.Comments.FirstOrDefaultAsync(x => x.Id == comment.Id);
             internalvariable.Comment1 = comment.Comment1;
@@ -64,7 +64,7 @@ namespace PracticaBlog.Data
             return post;
         }
 
-        public async Task<Post> PostPost(Post post)
+        public async Task<Post> PutPost(Post post)
         {
             var internalvariable = await _blogContext.Posts.FirstOrDefaultAsync(x => x.Id == post.Id);
             internalvariable.Title = post.Title;
@@ -83,7 +83,7 @@ namespace PracticaBlog.Data
             return user;
         }
 
-        public async Task<User> PostUser(User user)
+        public async Task<User> PutUser(User user)
         {
             var internalvariable = await _blogContext.Users.FirstOrDefaultAsync(x => x.Id == user.Id);
             internalvariable.Name = user.Name;

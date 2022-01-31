@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PracticaBlog.Controllers
 {
-    [Authorize]
+    //[Authorize]
     [ApiController]
     [Route("[controller]")]
     public class PostController : ControllerBase
@@ -35,22 +35,22 @@ namespace PracticaBlog.Controllers
             return entity;
         }
 
-        [HttpPut]
-        public async Task<ActionResult<Post>> Put(Post post)
+        [HttpPost]
+        public async Task<ActionResult<Post>> Post(Post post)
         {
             await postService.AddPost(post);
             return post;
         }
 
-        [HttpPost]
-        public async Task<ActionResult<Post>> Post(Post post)
+        [HttpPut]
+        public async Task<ActionResult<Post>> Put(Post post)
         {
             var entity = await postService.GetById(post.Id);
             if (entity == null)
             {
                 return NotFound();
             }
-            await postService.PostPost(post);
+            await postService.PutPost(post);
             return entity;
         }
 
